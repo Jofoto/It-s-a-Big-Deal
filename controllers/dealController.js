@@ -68,7 +68,7 @@ exports.updateDeal = async (req, res) => {
     res.status(200).json({
       status: 'success',
       data: {
-        deal: '<Updated deal here...>'
+        deal  
     }
   });
   }catch{
