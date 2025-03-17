@@ -1,0 +1,80 @@
+[
+    {
+        "id": 1,
+        "supermarket": "Sklavenitis",
+        "item": "Fresh Milk 1L",
+        "category": "Dairy",
+        "original_price": 1.5,
+        "discounted_price": 1.2,
+        "likes": 1,
+        "dislikes": 2,
+        "inventory": "yes",
+        "valid_from": "2025-03-08",
+        "valid_until": "2025-03-15"
+    },
+    {
+        "id": 2,
+        "supermarket": "Masoutis",
+        "item": "Olive Oil 1L",
+        "category": "Pantry",
+        "original_price": 7,
+        "discounted_price": 5.5,
+        "likes": 3,
+        "dislikes": 1,
+        "inventory": "yes",
+        "valid_from": "2025-03-08",
+        "valid_until": "2025-03-20"
+    },
+    {
+        "id": 3,
+        "supermarket": "Botanical - Bio Market & Organic Bar",
+        "item": "Organic Honey 500g",
+        "category": "Organic",
+        "original_price": 8,
+        "discounted_price": 6.8,
+        "likes": 1,
+        "dislikes": 1,
+        "inventory": "no",
+        "valid_from": "2025-03-08",
+        "valid_until": "2025-03-12"
+    },
+    {
+        "id": 4,
+        "supermarket": "Sklavenitis",
+        "item": "Whole Chicken 1kg",
+        "category": "Meat",
+        "original_price": 4.5,
+        "discounted_price": 3.99,
+        "likes": 0,
+        "dislikes": 0,
+        "inventory": "yes",
+        "valid_from": "2025-03-08",
+        "valid_until": "2025-03-14"
+    },
+    {
+        "id": 5,
+        "supermarket": "MODIANO 24ωρο MARKET",
+        "item": "Chocolate Bar 100g",
+        "category": "Snacks",
+        "original_price": 2,
+        "discounted_price": 1.5,
+        "likes": 1,
+        "dislikes": 0,
+        "inventory": "yes",
+        "valid_from": "2025-03-08",
+        "valid_until": "2025-03-18"
+    },
+    {
+        "id": 6,
+        "supermarket": "OK",
+        "item": "Garlic Sauce 100ml",
+        "category": "Organic",
+        "original_price": 4,
+        "discounted_price": 1.8,
+        "likes": 4,
+        "dislikes": 0,
+        "inventory": "no",
+        "valid_from": "2025-03-08",
+        "valid_until": "2025-03-12"
+    }
+]

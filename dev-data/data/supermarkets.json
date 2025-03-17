@@ -1,0 +1,97 @@
+[
+    {
+        "id": 1,
+        "name": "Botanical - Bio Market & Organic Bar",
+        "type": "Supermarket",
+        "address": "Riga Fereou 37, Patra 262 23, Greece",
+        "website": "http://www.allbiomarket.gr",
+        "contact": "+30 261 022 0427",
+        "rating": 4.8,
+        "reviews": 95,
+        "working_hours": {
+            "Monday": "8:00 AM – 9:00 PM",
+            "Tuesday": "8:00 AM – 9:00 PM",
+            "Wednesday": "8:00 AM – 9:00 PM",
+            "Thursday": "8:00 AM – 9:00 PM",
+            "Friday": "8:00 AM – 9:00 PM",
+            "Saturday": "8:00 AM – 6:00 PM",
+            "Sunday": "Closed"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Sklavenitis",
+        "type": "Hypermarket",
+        "address": "Glafkou 9, Patra 265 00, Greece",
+        "website": "http://www.sklavenitis.gr",
+        "contact": "+30 261 063 0200",
+        "rating": 4.6,
+        "reviews": 2025,
+        "working_hours": {
+            "Monday": "8:00 AM – 9:00 PM",
+            "Tuesday": "8:00 AM – 9:00 PM",
+            "Wednesday": "8:00 AM – 9:00 PM",
+            "Thursday": "8:00 AM – 9:00 PM",
+            "Friday": "8:00 AM – 9:00 PM",
+            "Saturday": "8:00 AM – 8:00 PM",
+            "Sunday": "Closed"
+        }
+    },
+    {
+        "id": 3,
+        "name": "Masoutis",
+        "type": "Supermarket",
+        "address": "Ypsilon Alonia Square, Patras, Greece",
+        "website": "https://www.masoutis.gr",
+        "contact": "Not Available",
+        "rating": "Not Available",
+        "reviews": "Not Available",
+        "working_hours": {
+            "Monday": "Not Available",
+            "Tuesday": "Not Available",
+            "Wednesday": "Not Available",
+            "Thursday": "Not Available",
+            "Friday": "Not Available",
+            "Saturday": "Not Available",
+            "Sunday": "Not Available"
+        }
+    },
+    {
+        "id": 4,
+        "name": "Sklavenitis",
+        "type": "Supermarket",
+        "address": "N.E.O. Patron - Athinon 158, Patra 264 43, Greece",
+        "website": "http://www.sklavenitis.gr",
+        "contact": "+30 261 043 4314",
+        "rating": 4.5,
+        "reviews": 530,
+        "working_hours": {
+            "Monday": "8:00 AM – 9:00 PM",
+            "Tuesday": "8:00 AM – 9:00 PM",
+            "Wednesday": "8:00 AM – 9:00 PM",
+            "Thursday": "8:00 AM – 9:00 PM",
+            "Friday": "8:00 AM – 9:00 PM",
+            "Saturday": "8:00 AM – 8:00 PM",
+            "Sunday": "Closed"
+        }
+    },
+    {
+        "id": 5,
+        "name": "MODIANO 24ωρο MARKET",
+        "type": "Convenience Store",
+        "address": "Agiou Nikolaou 69, Patra, Greece",
+        "website": "Not Available",
+        "contact": "+30 261 024 2564",
+        "rating": "Not Available",
+        "reviews": "Not Available",
+        "working_hours": {
+            "Monday": "Open 24 hours",
+            "Tuesday": "Open 24 hours",
+            "Wednesday": "Open 24 hours",
+            "Thursday": "Open 24 hours",
+            "Friday": "Open 24 hours",
+            "Saturday": "Open 24 hours",
+            "Sunday": "Open 24 hours"
+        }
+    }
+]
