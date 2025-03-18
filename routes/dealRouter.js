@@ -6,6 +6,8 @@ const router = express.Router();
 //Param Middleware
 //router.param('id', dealController.checkID);
 
+router.route('/monthly-plan/:year').get(dealController.getMonthlyPlan);
+
 //When Someone Wants ALL Deals
 router
   .route('/')
