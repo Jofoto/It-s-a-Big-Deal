@@ -1,10 +1,8 @@
 const Deal = require('../models/dealModel');
 const APIFeatures = require('../utils/apiFeatures');
+const catchAsync = require('../utils/catchAsync');
 
-  exports.getAllDeals = async (req, res) => {
-  
-    try{
-     
+  exports.getAllDeals = catchAsync(async (req, res, next) => {
       //execute query
       const features = new APIFeatures(Deal.find(), req.query)
       .filter()
@@ -22,17 +20,10 @@ const APIFeatures = require('../utils/apiFeatures');
         data: {
           deals
         }
-        });
-    }catch (err){
-      res.status(404).json({
-        status: 'fail',
-        message: err
       });
-    }
-};
+});
 
-exports.getDeal = async (req, res) => {
-  try{
+exports.getDeal = catchAsync(async (req, res, next) => {
     const deal = await Deal.findById(req.params.id);
     //const id = req.params.id * 1;
     res.status(200).json({
@@ -41,17 +32,11 @@ exports.getDeal = async (req, res) => {
         deal
       }
     });
-  } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: err
-    });
-  }
-};
+});
 
-exports.createDeal = async (req, res) => {
-  
-  try {
+
+
+exports.createDeal = catchAsync(async (req, res, next) => {
   const newDeal = await Deal.create(req.body);
 
     res.status(201).json({
@@ -60,17 +45,18 @@ exports.createDeal = async (req, res) => {
           deal: newDeal
         }
       });
-    } catch (err) {
-      res.status(400).json({
-        status: 'fail',
-        message: 'Invalid data sent'
-      })
-    }
-  } ;
+  // try {
+  
+  //   } catch (err) {
+  //     res.status(400).json({
+  //       status: 'fail',
+  //       message: 'Invalid data sent'
+  //     })
+  //   }
+  });
 
 
-exports.updateDeal = async (req, res) => {
-  try{
+exports.updateDeal = catchAsync(async (req, res, next) => {
     const deal = await Deal.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true
@@ -81,29 +67,16 @@ exports.updateDeal = async (req, res) => {
         deal  
     }
   });
-  }catch{
-    res.status(400).json({
-      status: 'fail',
-      message: err
-  })
- }
-};
+});
 
-exports.deleteDeal = async (req, res) => {
-  try {
+exports.deleteDeal = catchAsync(async (req, res, next) => {
     await Tour.findByIdAndDelete(req.params.id);
 
     res.status(204).json({
       status: 'success',
       data: null
     });
-  } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: err
-    });
-  }
-};
+});
 
 //admin (3) (later)
 // exports.getDealStats = async (req, res) => {
@@ -122,8 +95,7 @@ exports.deleteDeal = async (req, res) => {
 // }
 
 //admin (3a) -- num of deals for each day, by year and month
-exports.getMonthlyPlan = async (req, res) => {
-  try {
+exports.getMonthlyPlan = catchAsync(async (req, res, next) => {
     const year = req.params.year * 1;
 
     const plan = await Deal.aggregate([
@@ -160,10 +132,4 @@ exports.getMonthlyPlan = async (req, res) => {
         $limit: 12
       }
     ])
-  } catch (err) {
-    res.status(404).json({
-            status: 'fail',
-            message: err
-          });
-  }
-}
+});
