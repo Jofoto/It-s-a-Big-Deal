@@ -16,7 +16,7 @@ const dealSchema = new mongoose.Schema({
         type: Number, 
         validate: { 
             validator : function(val) {
-            return val < this.original_price; //discounted price must be lower than original 
+                return val < this.original_price; //discounted price must be lower than original 
             },
             message: 'Discount price ({VALUE}) should be lower than original price'
         }
