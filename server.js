@@ -31,8 +31,6 @@ const server = app.listen(port, () => {
 process.on('unhandledRejection', err => {
     console.log('❌ DB connection failed. Shutting down...');
     console.log(err.name, err.message);
-    
-    //give server time to finish all pending requests before shutting down
     server.close(() => {
         process.exit(1);
     }); 
