@@ -9,6 +9,7 @@ router.get('/signup', (req, res) => {
 });
 
 router.post('/signup', authController.signup);
+router.post('/login', authController.login);
 
 router
   .route('/')

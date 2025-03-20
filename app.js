@@ -3,6 +3,7 @@ const morgan = require('morgan');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
+
 const dealRouter = require('./routes/dealRouter');
 const userRouter = require('./routes/userRouter');
 const viewRouter = require('./routes/viewRouter');
