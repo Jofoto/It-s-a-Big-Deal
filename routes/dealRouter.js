@@ -1,5 +1,6 @@
 const express = require('express');
 const dealController = require('../controllers/dealController');
+const authController = require('../controllers/authController');
 
 const router = express.Router();
 
@@ -11,7 +12,7 @@ router.route('/monthly-plan/:year').get(dealController.getMonthlyPlan);
 //When Someone Wants ALL Deals
 router
   .route('/')
-  .get(dealController.getAllDeals)  // Show all deals
+  .get(authController.protect, dealController.getAllDeals)  // Show all deals + protect from users that are not logged in
   .post(dealController.createDeal); // Add a new deal
 
 

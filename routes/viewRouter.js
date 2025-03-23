@@ -9,9 +9,9 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/login-success', (req, res) => {
-    res.send('<h2>Login Successful! 🎉</h2><a href="/api/v1/users/login">Go to Home</a></form>');
-});
+// router.get('/login-success', (req, res) => {
+//     res.send('<h2>Login Successful! 🎉</h2><a href="/api/v1/users/login">Go to Home</a></form>');
+// });
 
 router.get('/user', (req, res) => {
     // if (!req.user) {

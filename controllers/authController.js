@@ -1,3 +1,4 @@
+const util = require('util');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
@@ -20,15 +21,15 @@ exports.signup = catchAsync(async(req, res, next) => {
 
     const token = signToken(newUser._id);
 
-    // if (req.headers['content-type'] === 'application/json') {
-    //     return res.status(201).json({
-    //         status: 'success',
-    //         token,
-    //         data: {
-    //             user: newUser
-    //         }
-    //     });
-    // }
+    if (req.headers['content-type'] === 'application/json') {
+        return res.status(201).json({
+            status: 'success',
+            token,
+            data: {
+                user: newUser
+            }
+        });
+    }
 
     //redirect user after signup
     res.redirect('/login');
@@ -52,7 +53,7 @@ exports.login = catchAsync(async(req, res, next) => {
 
     //send token to client if all is correct
     const token = signToken(user._id);
-    
+
     // Store user in session
     req.session.user = user;
 
@@ -62,6 +63,24 @@ exports.login = catchAsync(async(req, res, next) => {
     //     status: 'success',
     //     token
     // });
+});
 
+exports.protect = catchAsync(async(req, res, next) => {
+    //get token + check if it exists
+    let token;
+    if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
+        token = req.headers.authorization.split(' ')[1];
+    }
+    console.log(token);
+    if(!token){
+        return next(new AppError('You are not logged in. Please log in to get access.', 401));
+    }
+
+    //token verification
+    jwt.verify(token, process.env.JWT_SECRET);
+    //check if user exists
+
+    //check if user changed psswrd after jwt issued
     
+    next();
 });
