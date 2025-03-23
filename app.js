@@ -1,4 +1,5 @@
 const express = require('express');
+const session = require('express-session');
 const morgan = require('morgan');
 
 const AppError = require('./utils/appError');
@@ -21,11 +22,18 @@ if(process.env.NODE_ENV === 'development'){
 
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
-// app.set('layout', 'layouts/layout')
-// app.use(expressLayouts)
+
 
 app.use(express.json());
+//Body parser middleware 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(`${__dirname}/public`));
+
+app.use(session({
+    secret: process.env.JWT_SECRET, 
+    resave: false, 
+    saveUninitialized: true
+}));
 
 app.use((req, res, next) => {
     req.requestTime = new Date().toISOString();
@@ -34,13 +42,10 @@ app.use((req, res, next) => {
   });
 
 
-//Body parser middleware  
-app.use(express.urlencoded({ extended: true }));
-
-//Routes
+//Routes 
+app.use('/', viewRouter);
 app.use('/api/v1/deals', dealRouter);
 app.use('/api/v1/users', userRouter);
-app.use('/', viewRouter);
 
 app.all('*', (req, res, next) => {
     next(new AppError(`Can't find ${req.originalUrl} on this server.`, 404));

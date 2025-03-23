@@ -4,12 +4,13 @@ const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 
 const signToken = id => {
-    jwt.sign({id}, process.env.JWT_secret, {
+    return jwt.sign({id}, process.env.JWT_secret, {
         expiresIn: process.env.JWT_EXPIRES_IN
     });
 }
 
 exports.signup = catchAsync(async(req, res, next) => {
+    console.log(req.body);
     const newUser = await User.create({
         username: req.body.username,
         email: req.body.email,
@@ -19,18 +20,18 @@ exports.signup = catchAsync(async(req, res, next) => {
 
     const token = signToken(newUser._id);
 
-    if (req.headers['content-type'] === 'application/json') {
-        return res.status(201).json({
-            status: 'success',
-            token,
-            data: {
-                user: newUser
-            }
-        });
-    }
+    // if (req.headers['content-type'] === 'application/json') {
+    //     return res.status(201).json({
+    //         status: 'success',
+    //         token,
+    //         data: {
+    //             user: newUser
+    //         }
+    //     });
+    // }
 
     //redirect user after signup
-    res.redirect('/signup-success');
+    res.redirect('/login');
 });
 
 
@@ -51,8 +52,16 @@ exports.login = catchAsync(async(req, res, next) => {
 
     //send token to client if all is correct
     const token = signToken(user._id);
-    res.status(200).json({
-        status: 'success',
-        token
-    });
+    
+    // Store user in session
+    req.session.user = user;
+
+    res.redirect('/user');
+
+    // res.status(200).json({
+    //     status: 'success',
+    //     token
+    // });
+
+    
 });
