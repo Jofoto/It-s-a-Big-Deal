@@ -1,5 +1,5 @@
 # It's a Big Deal (Ongoing project)
-Development of a collaborative system for registering, searching and evaluating offers of consumer goods in super-markets among users. The system allows its registered users to inform others about the existence of products that are at a good (according to their own criteria) price, operating in parallel with existing tools, which are only updated regarding price but not stock, and do not include all super-market stores (e.g. local chains, mini-markets). 
+Development of a collaborative system for registering, searching and evaluating deals/offers of consumer goods in super-markets among users. The system allows its registered users to inform others about the existence of products that are at a good (according to their own criteria) price, operating in parallel with existing tools, which are only updated regarding price but not stock, and do not include all super-market stores (e.g. local chains, mini-markets). 
 
 ## Tools & Technologies  
 
